@@ -10,3 +10,9 @@ module "participant_vpc" {
   subnet_cidr = "192.168.0.0/24"
 
 }
+module "route_53_hosted_zone" {
+  source          = "./modules/route53_private_hosted_zone"
+  owner_vpc       = module.owner_vpc.vpc_id
+  participant_vpc = module.participant_vpc.vpc_id
+  zone_name       = "example.com"
+}

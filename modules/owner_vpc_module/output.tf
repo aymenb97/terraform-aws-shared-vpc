@@ -4,3 +4,6 @@ output "private_subnet_ids" {
 output "tgw_id" {
   value = aws_ec2_transit_gateway._.id
 }
+output "vpc_id" {
+  value = aws_vpc._.id
+}
